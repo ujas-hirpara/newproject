@@ -1,0 +1,49 @@
+
+<div class="container">
+    <form id="listform" #todoform="ngForm">
+        <div class="heading">
+            <h1>TO DO LIST</h1>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label" >Title<i>*</i></label>
+            <input type="text" name="title" #title="ngModel"  [(ngModel)] = "newTitle" class="form-control" id="formInput"
+                placeholder="add title" required>
+            <span><b *ngIf="title.invalid && title.touched">Please enter the title</b></span>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+            <textarea class="form-control" id="example" rows="3" [(ngModel)] = "newDes" name="textarea"  ></textarea>
+        </div>
+        <div class="col-md-4">
+            <label for="inputStat" class="form-label">Status<i>*</i></label>
+            <select id="inputStat" class="form-select" [(ngModel)] = "newStatus" name="status" required #status="ngModel">
+                <option  id="inputstate1" selected>to do</option>
+                <option  id="inputstate">inprogress</option>
+                <option  id="inputstate2">completed</option>
+            </select>
+            <span><b *ngIf="status.invalid && status.touched">please enter the status</b></span>
+
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Start date<i>*</i></label>
+            <input type="date" class="form-control" id="startdate" name="sdate" [(ngModel)] = "newSdate" required #sdate="ngModel" [max]="edate.value">
+            <span><b *ngIf="sdate.invalid && sdate.touched">please enter the start date</b></span>
+
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label" >End date<i>*</i></label>
+            <input type="date" class="form-control" id="enddate" name="edate" [(ngModel)] = "newEdate" required #edate="ngModel"  [min] = "sdate.value">
+            <span><b *ngIf="edate.invalid && edate.touched">please enter the end date</b></span>
+
+        </div>
+        <div style="margin-left: 300px;" class="col-12">
+            <button class="btn btn-primary" id="submit" type="submit" [disabled]="todoform.invalid"
+                (click)="getdata(todoform.value)" (click) = "todoform.reset()">{{value}}</button>
+            <button class="btn btn-primary" id="reset" (click) = "todoform.reset()" type="submit">reset</button>
+        </div>
+
+    </form>
+
+
+</div>
+

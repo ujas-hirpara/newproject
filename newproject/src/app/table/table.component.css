@@ -1,0 +1,58 @@
+#add{
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(42, 148, 247);
+}
+.container{
+    margin: auto;
+    width: 1000px;
+
+    
+}
+.router{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mybtn{
+   border-radius: 5px;
+}
+.dialog{
+    width: 250px;
+    height: 150px;
+    border-radius: 15px 0px ;
+    background-color: rgb(84, 84, 84);
+    color: white;
+    position: absolute;
+    top: 120px;
+    left: 41%;
+    box-shadow:20px 20px 20px black ;
+
+}
+#dialogTitle{
+    width: 250px;
+    height: 40px;
+    background-color: black;
+    text-align: center;
+    border-radius: 15px 0px;
+
+}
+#dialogData{
+    width: 250px;
+    height: 60px;
+    text-align: center;
+}
+.dialogbtn{
+    width: 120px;
+    background-color: rgb(85, 184, 255);
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+}
+.btnDiv{
+    display: flex;
+    justify-content: space-around;
+}

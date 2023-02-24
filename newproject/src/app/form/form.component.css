@@ -1,0 +1,31 @@
+.container {
+    margin: auto;
+    padding-top: 30px;
+    width: 800px;
+}
+
+.heading {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+i {
+    color: red;
+}
+button{
+    margin: 5px;
+}
+b{
+    color: red;
+}
+#rout{
+    color: white;
+    width: 50px;
+    height: 24px;
+    text-decoration: none;
+    display: block;
+}

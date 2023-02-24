@@ -1,0 +1,47 @@
+<div class="container" [style.opacity] = "opacity">
+    <div class="router">
+        <a routerLink="todo"><button id="add">Add</button></a>
+    </div>
+    <div class="table">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">INDEX</th>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">DISCRIPTION</th>
+                    <th scope="col">START DATE</th>
+                    <th scope="col">END DATE</th>
+                    <th scope="col">DELETE</th>
+                    <th scope="col">EDIT</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let element of myObj;index as i">
+                    <td>{{i + 1}}</td>
+                    <td>{{element.title}}</td>
+                    <td>{{element.status}}</td>
+                    <td>{{element.textarea}}</td>
+                    <td>{{element.sdate}}</td>
+                    <td>{{element.edate}}</td>
+                    <td><button mat-raised-button id="mybtn" (click)="deletelist(i)">DELETE</button></td>
+                    <td><button (click)="edit(i)" id="mybtn">EDIT</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="dialog" [hidden] = "hide">
+<h1  id="dialogTitle" mat-dialog-title>Delete</h1>
+  <div id="dialogData" mat-dialog-content>
+    Are you sure you want to delete this data!!!
+  </div>
+  <div class="btnDiv" mat-dialog-actions>
+    <button  class = "dialogbtn" (click) = "nodelete()" mat-button mat-dialog-close>No</button>
+    <button class = "dialogbtn" (click) = 'detelet(index)'>Ok</button>
+  </div>
+</div>
